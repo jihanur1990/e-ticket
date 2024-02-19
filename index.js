@@ -1,6 +1,6 @@
 let total=0;
 let seat_count=0;
-let total_seat=24;
+let total_seat=40;
 let grand_total=0;
 document.getElementById("coupon-code").value=""
 const seats=document.querySelectorAll(".seat")
@@ -81,8 +81,9 @@ next.addEventListener("click", function(){
 
 const continue_btn=document.getElementById("continue-btn");
 continue_btn.addEventListener("click",function(){
-    document.getElementById("p-number").value="";
+    total=0;
     document.getElementById("total").innerText="0"
+    grand_total=0;
     document.getElementById("grand-total").innerText="0"
     seat_count=0;
     document.getElementById("seat-quantity").innerText="0";
@@ -90,5 +91,5 @@ continue_btn.addEventListener("click",function(){
     document.getElementById("name").value="";
     document.getElementById("email").value="";
     document.getElementById("coupon-sec").classList.remove("hidden")
-    document.querySelectorg("#ticket-info").removeChild("tr");
+    document.getElementById("ticket-info").innerHTML="";
 })
