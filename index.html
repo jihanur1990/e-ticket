@@ -25,6 +25,7 @@
       padding: 12px 24px;
       border: none;
       border: 2px solid rgb(29, 209, 0);
+      color: white;
     }
 
     .btn-primary:hover {
@@ -72,6 +73,9 @@
     .bg-green{
       background: #07bb07 !important;
     }
+    .modal-size{
+      width: 50% !important;
+    }
   </style>
   
 </head>
@@ -107,7 +111,7 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn btn-secondary ml-2 text-xl font-bold">Bus<img src="./Images/bus-icon.png" alt=""></a>
+          <a class="btn btn-secondary ml-2 text-xl font-bold">Bus<img src="./images/bus-icon.png" alt=""></a>
         </div>
       </div>
     </div>
@@ -127,7 +131,7 @@
           </div>
         </div>
       </div>
-      <div class="absolute mt-[-20px] w-full flex flex-row justify-between px-16">
+      <div class="absolute mt-[-20px] w-full flex flex-row justify-center gap-16">
         <div class="flex flex-row bor gap-4  mt-[-30px] rounded-3xl p-7 bg-white" style="box-shadow:0px 3px 3px #07bb07">
           <div>
             <img src="./images/people.png" alt="">
@@ -240,10 +244,11 @@
           </div>
         </div>
       </div>
+      <!-----------------------------Ticket----------------->
       <div class="w-[90%] max-w-[1280px] mx-auto mt-12 bg-white text-left flex flex-row justify-center rounded-3xl" id="buy-ticket">
-        <div class="display-seat p-6 w-[60%] border-dashed border-r-2">
+        <div class="display-seat py-6 px-10 w-[60%] border-dashed border-r-2">
           <h5 class="font-bold text-xl">Select Your Seat</h5>
-          <div class="my-4 flex flex-row justify-between">
+          <div class="my-4 flex flex-row justify-between border-y-2 border-dashed py-5">
             <div class="inline-flex"><img src="./images/seat-gray.png" alt="" class="w-[21px] h-[21px]">Available</div>
             <div class="text-lg text-[#1DD100] inline-flex"><img src="./images/seat-green-filled.png" alt="" class="w-[21px] h-[21px]">Selected</div>
           </div>
@@ -363,10 +368,12 @@
         </div>
 
         <div class="selected-seat w-[40%] p-5">
-          <div class="border-b-2 border-dashed pb-4"><h5 class="font-bold text-xl">Your Selected Seats</h5></div>
-          <div class="bg-[#f7f8f8] p-6">
+          <div class="border-b-2 border-dashed pb-2 mb-6">
+            <h5 class="font-bold text-xl">Your Selected Seats</h5>
+          </div>
+          <div class="bg-[#f7f8f8] p-6 rounded-2xl">
             <div class="selected-seat-info flex justify-between border-b-2 border-dashed py-3">
-              <div class="text-lg font-bold">Seat<sup class="text-[#1DD100] text-[12px]" id="seat-quantity">0</sup></div>
+              <div class="text-lg font-bold">Seat<sup class="bg-[#1DD100] text-[12px] text-white p-1 rounded-full" id="seat-quantity">0</sup></div>
               <div class="text-lg font-bold">Class</div>
               <div class="text-lg font-bold">Price</div>
             </div>
@@ -378,7 +385,7 @@
               <p class="font-bold text-[16px]">Total Price</p>
               <p class="font-bold text-[16px]">BDT <span id="total" class="font-bold text-[16px]">0</span></p>
             </div>
-            <div class="coupon-container bg-white w-full inline-flex justify-between p-4" id="coupon-sec">
+            <div class="coupon-container bg-white w-full inline-flex justify-between p-4 font-bold" id="coupon-sec">
               <input type="text" id="coupon-code" placeholder="Have any coupon?">
               <button class="btn btn-primary" id="coupon-btn">Apply</button>
             </div>
@@ -387,11 +394,35 @@
               <p class="font-bold text-[16px]">BDT <span id="grand-total" class="font-bold text-[16px]">0</span></p>
             </div>
           </div>
+          <div class="flex flex-col space-y-5 font-bold mt-6">
+            <label for="name">Passenger Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" class="py-5 border-2 rounded-2xl pl-5">
+            <label for="number">Phone Number</label>
+            <input type="number" name="number" id="p-number" placeholder="Enter your phone number" class="py-5 border-2 rounded-2xl pl-5">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Enter your phone number" class="py-5 border-2 rounded-2xl pl-5">
+            <button class="btn btn-primary w-full text-center h-16 text-white" id="next-btn">Next</button>
+          </div>
         </div>
 
       </div>
     </div>
-  </main>
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box flex flex-col items-center">
+          <img src="./images/success.png" alt="" class="w-[100px] h-[100px] py-5">
+          <h3 class="font-bold text-lg text-[#3eb760]">SUCCESS</h3>
+          <p class="font-bold">Thank you for booking our bus seat</p>
+          <p class="font-bold mb-1">We are working hard to find the best service & deals for you.</p>
+          <p>Shortly you will find a confirmation mail</p>
+          <div class="modal-action py-5">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn btn-primary" id="continue-btn">Continue</button>
+            </form>
+          </div>
+        </div>
+     </dialog>
+ </main>
   <footer>
 
   </footer>

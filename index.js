@@ -39,11 +39,7 @@ for (const seat of seats) {
            total_text.innerText=total;
            document.getElementById("grand-total").innerText=total;
         }
-        else{
-            console.log("bg-green");
-        }
-    }
-    )
+    })
 }
 
 //coupon function
@@ -66,8 +62,33 @@ const couponBtn=document.getElementById("coupon-btn")
             document.getElementById("coupon-code").value="";
             coupon_sec.classList.add("hidden");
     }
-   else{
-    console.log("Inalid");
+   else {
     document.getElementById("coupon-code").value="";
    }
+})
+
+const next=document.getElementById("next-btn")
+
+next.addEventListener("click", function(){
+    const numberText=document.getElementById("p-number").value;
+    const modal=document.getElementById("my_modal_5")
+    const total_price=document.getElementById("total").innerText;
+    const total=parseInt(total_price)
+     if(numberText.length!==0 && total>0){
+       modal.showModal();
+     }
+})
+
+const continue_btn=document.getElementById("continue-btn");
+continue_btn.addEventListener("click",function(){
+    document.getElementById("p-number").value="";
+    document.getElementById("total").innerText="0"
+    document.getElementById("grand-total").innerText="0"
+    seat_count=0;
+    document.getElementById("seat-quantity").innerText="0";
+    document.getElementById("p-number").value="";
+    document.getElementById("name").value="";
+    document.getElementById("email").value="";
+    document.getElementById("coupon-sec").classList.remove("hidden")
+    document.querySelectorg("#ticket-info").removeChild("tr");
 })
