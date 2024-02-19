@@ -60,11 +60,17 @@
       border-radius: 88px 88px 0px 0px;
       background: rgb(247, 248, 248);
     }
+    .ticket-info{
+      min-height: 100px;
+    }
     .ticket-info tr{
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 5px 0;
+    }
+    .bg-green{
+      background: #07bb07 !important;
     }
   </style>
   
@@ -72,7 +78,7 @@
 
 <body class="font-raleway">
   <header>
-    <div class="w-[90%] max-w-[1170px] mx-auto my-8 lg:my-10 ">
+    <div class="w-[90%] max-w-[1280px] mx-auto my-8 lg:my-10 ">
       <!--- navbar-start-->
       <div class="navbar bg-base-100 items-center mb-4">
         <div class="navbar-start">
@@ -105,8 +111,8 @@
         </div>
       </div>
     </div>
-    <div class="w-[90%] max-w-[1170px] mx-auto lg:my-10 relative">
-      <div class="hero min-h-[90vh] rounded-3xl" style="background-image: url(./images/banner.png);">
+    <div class="w-[90%] max-w-[1280px] mx-auto lg:my-10 relative">
+      <div class="hero min-h-[70vh] rounded-3xl" style="background-image: url(./images/banner.png);">
         <div class="hero-overlay bg-opacity-30 rounded-3xl">
 
         </div>
@@ -114,9 +120,10 @@
           <div>
             <h1 class="mb-5 text-6xl font-extrabold">End-to-End Travel with</h1>
             <h1 class="mb-5 text-6xl font-extrabold text-[#1DD100]">JS Paribahan</h1>
-            <p class="mb-5 text-lg">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi<br>
+            <p class="mb-8 text-lg">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi<br>
               exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            <button class="btn btn-primary">Get Started</button>
+              <a class="btn btn-primary mt-8" href="#buy-ticket">Buy Tickets</a>
+            
           </div>
         </div>
       </div>
@@ -153,7 +160,7 @@
   </header>
   <main>
     <!-- ----------------------Coupon Section------------>
-    <div class="w-[90%] max-w-[1170px] mx-auto mt-40 text-center">
+    <div class="w-[90%] max-w-[1280px] mx-auto mt-40 text-center">
       <h1 class="text-4xl font-extrabold">Best offers for you</h1>
       <div class="flex flex-row gap-10 w-full my-12">
         <div class="flex flex-row relative w-full bg-yellow-500 rounded-2xl">
@@ -185,12 +192,12 @@
     </div>
     <!--------------------------- Bus Schedule & Buy Ticket--------------------------->
     <div class="w-[100%] mx-auto mt-28 text-center buy-ticket">
-      <div class="w-[90%] max-w-[1170px] mx-auto mt-28 text-center">
+      <div class="w-[90%] max-w-[1280px] mx-auto mt-28 text-center">
         <h1 class="text-4xl font-extrabold mb-4">J.S Paribahan</h1>
         <p class="text-lg">Yes, you can run unit tests and view the results directly within the app. <Br> The integrated testing features allow for a streamlined .</p>
       </div>
       <!------------------------------Bus Schedule and available ticket-->
-      <div class="w-[90%] max-w-[1170px] mx-auto mt-12 bg-white text-left flex flex-row justify-center ">
+      <div class="w-[90%] max-w-[1280px] mx-auto mt-12 bg-white text-left flex flex-row justify-center ">
         <div class="my-4 w-full">
           <div class="bus-schedule flex flex-row justify-between">
             <div class="bus-info flex flex-row">
@@ -201,7 +208,9 @@
               </div>
             </div>
             <div class="available-seat">
-              <button class="inline-flex"><img src="./images/seat-green.png" alt="" class="w-[21px] h-[21px] my-auto"><span id="available-seat" class="text-[#1DD100] text-lg font-semibold">40 Seats left</span></button>
+              <button class="inline-flex">
+                <img src="./images/seat-green.png" alt="" class="w-[21px] h-[21px] my-auto"><span id="available-seat" class="text-[#1DD100] text-lg font-semibold">40</span> <span class="text-[#1DD100] text-lg font-semibold pl-1">Seats left</span>
+              </button>
             </div>
           </div>
           <div class="route bg-[#f7f8f8] rounded-3xl">
@@ -231,7 +240,7 @@
           </div>
         </div>
       </div>
-      <div class="w-[90%] max-w-[1170px] mx-auto mt-12 bg-white text-left flex flex-row justify-center rounded-3xl">
+      <div class="w-[90%] max-w-[1280px] mx-auto mt-12 bg-white text-left flex flex-row justify-center rounded-3xl" id="buy-ticket">
         <div class="display-seat p-6 w-[60%] border-dashed border-r-2">
           <h5 class="font-bold text-xl">Select Your Seat</h5>
           <div class="my-4 flex flex-row justify-between">
@@ -241,42 +250,141 @@
           <div class="flex justify-end"><button class="py-4 px-8 bg-[#0307121a] rounded-xl"><img src="./images/steering-wheel.png" alt="" class="h-[24px] w-[24px]"></button></div>
 
           <!---------------------Seat Plan----------------------->
-          <div class="seat-plane">
+          <div class="seat-plane flex justify-between p-10 lg:p-16">
+            <!----------------Left Col------------->
+            <div class="left-col grid grid-cols-3 gap-4 lg:gap-6">
+              <div class="w-[50px] p-3 rounded-xl">
+                <h2 class="text-xl font-bold">A</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">A1</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">A2</h2>
+              </div>
+              <!------------------------Row B--------------------->
+              <div class="w-[50px] p-3 rounded-xl">
+                <h2 class="text-xl font-bold">B</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">B1</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">B2</h2>
+              </div>
+              <!------------------------Row C--------------------->
+              <div class="w-[50px] p-3 rounded-xl">
+                <h2 class="text-xl font-bold">C</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">C1</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">C2</h2>
+              </div>
+              <!------------------------Row D--------------------->
+              <div class="w-[50px] p-3 rounded-xl">
+                <h2 class="text-xl font-bold">A</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">D1</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">D2</h2>
+              </div>
+              <!------------------------Row E--------------------->
+              <div class="w-[50px] p-3 rounded-xl">
+                <h2 class="text-xl font-bold">E</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">E1</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">E2</h2>
+              </div>
+              <!------------------------Row F--------------------->
+              <div class="w-[50px] p-3 rounded-xl">
+                <h2 class="text-xl font-bold">F</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">F1</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">F2</h2>
+              </div>
+            </div>
+            <!----------------right Col------------->
+
+            <div class="right-col grid grid-cols-2 gap-4">
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">A3</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">A4</h2>
+              </div>
+              <!------------------------Row B--------------------->
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">B3</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">B4</h2>
+              </div>
+              <!------------------------Row C--------------------->
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">C3</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">C4</h2>
+              </div>
+              <!------------------------Row D--------------------->
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">D3</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">D4</h2>
+              </div>
+              <!------------------------Row E--------------------->
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">E3</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">E4</h2>
+              </div>
+              <!------------------------Row F--------------------->
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">F3</h2>
+              </div>
+              <div class="seat bg-slate-200 w-[50px] py-3 px-8 rounded-xl flex justify-center">
+                <h2 class="text-xl font-bold">F4</h2>
+              </div>
+            </div>
 
           </div>
         </div>
 
         <div class="selected-seat w-[40%] p-5">
-          <div class="border-b-2 border-dashed pb-4"><h5 class="font-bold text-xl">Select Your Seat</h5></div>
+          <div class="border-b-2 border-dashed pb-4"><h5 class="font-bold text-xl">Your Selected Seats</h5></div>
           <div class="bg-[#f7f8f8] p-6">
             <div class="selected-seat-info flex justify-between border-b-2 border-dashed py-3">
               <div class="text-lg font-bold">Seat<sup class="text-[#1DD100] text-[12px]" id="seat-quantity">0</sup></div>
               <div class="text-lg font-bold">Class</div>
               <div class="text-lg font-bold">Price</div>
             </div>
-            <table class="w-full ticket-info">
-              <tr>
-                <td>A1</td>
-                <td>Economic</td>
-                <td>550</td>
-              </tr>
-              <tr>
-                <td>A2</td>
-                <td>Economic</td>
-                <td>550</td>
-              </tr>
+            <!--------Ticker-info table------------->
+            <table class="w-full ticket-info" id="ticket-info">
+             
             </table>
             <div class="total inline-flex justify-between w-full border-t-2 py-4">
               <p class="font-bold text-[16px]">Total Price</p>
-              <p class="font-bold text-[16px]">BDT <span id="total" class="font-bold text-[16px]">1100</span></p>
+              <p class="font-bold text-[16px]">BDT <span id="total" class="font-bold text-[16px]">0</span></p>
             </div>
-            <div class="coupon-container bg-white w-full inline-flex justify-between p-4">
+            <div class="coupon-container bg-white w-full inline-flex justify-between p-4" id="coupon-sec">
               <input type="text" id="coupon-code" placeholder="Have any coupon?">
-              <button class="btn btn-primary">Apply</button>
+              <button class="btn btn-primary" id="coupon-btn">Apply</button>
             </div>
             <div class="total inline-flex justify-between w-full py-4">
               <p class="font-bold text-[16px]">Grand Total</p>
-              <p class="font-bold text-[16px]">BDT <span id="grand-total" class="font-bold text-[16px]">1100</span></p>
+              <p class="font-bold text-[16px]">BDT <span id="grand-total" class="font-bold text-[16px]">0</span></p>
             </div>
           </div>
         </div>
@@ -287,6 +395,7 @@
   <footer>
 
   </footer>
+  <script src="index.js"></script>
 </body>
 
 </html>
